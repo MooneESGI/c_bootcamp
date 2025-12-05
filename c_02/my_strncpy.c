@@ -1,4 +1,5 @@
-#include "my_strncpy.h"
+#include "my_strchr.h"
+#include <stddef.h>
 
 char *my_strncpy(char *dest, const char *src, size_t n)
 {

@@ -1,4 +1,5 @@
-#include "my_strncat.h"
+#include "my_strchr.h"
+#include <stddef.h>
 
 char *my_strncat(char *dest, const char *src, size_t n)
 {

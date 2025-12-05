@@ -1,4 +1,5 @@
-#include "my_strcat.h"
+#include "my_strchr.h"
+#include <stddef.h>
 
 char *my_strcat(char *dest, const char *src)
 {
