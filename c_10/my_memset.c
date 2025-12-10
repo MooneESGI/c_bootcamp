@@ -1,4 +1,4 @@
-#include "my_memset.h"
+#include <stddef.h>
 
 void *my_memset(void *s, int c, size_t n)
 {

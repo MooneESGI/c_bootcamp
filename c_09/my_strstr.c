@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include "my_strstr.h"
 
 char *my_strstr(const char *haystack, const char *needle)
 {

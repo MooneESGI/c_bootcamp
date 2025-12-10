@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include "my_strrchr.h"
 
 char *my_strrchr(const char *s, int c)
 {

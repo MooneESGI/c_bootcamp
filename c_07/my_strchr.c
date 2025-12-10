@@ -1,4 +1,3 @@
-#include "my_strchr.h"
 #include <stddef.h>
 
 
