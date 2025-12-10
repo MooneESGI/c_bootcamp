@@ -1,23 +1,27 @@
 #include <stddef.h>
 
-
-char *my_strchr(const char *s, int c)
+static char extract_char(const void *c)
 {
-    int i = 0;
-    unsigned char target = (unsigned char)c;
+    const char *p = c;
+    if (p == NULL)
+        return '\0';
+    if (p[0] == '\0')
+        return '\0';
 
-    if (!s)
-        return NULL;
-    while (1)
-    {
-        if ((unsigned char)s[i] == target)
-            return (char *)&s[i];
+    return p[0];
+}
 
-        if (s[i] == '\0')
-            break;
+char *my_strchr(const char *s, const void *c)
+{
+    char target = extract_char(c);
 
-        i++;
+    while (*s) {
+        if (*s == target)
+            return (char *)s;
+        s++;
     }
+    if (target == '\0')
+        return (char *)s;
 
     return NULL;
 }

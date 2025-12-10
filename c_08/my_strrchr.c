@@ -1,21 +1,30 @@
+#include "my_strrchr.h"
 #include <stddef.h>
 
-char *my_strrchr(const char *s, int c)
+static char extract_char(const void *c)
 {
-    int i;
-    unsigned char target = (unsigned char)c;
+    const char *p = c;
 
-    if (!s)
-        return NULL;
-    i = 0;
-    while (s[i] != '\0')
-        i++;
-    while (i >= 0)
-    {
-        if ((unsigned char)s[i] == target)
-            return (char *)&s[i];
-        i--;
+    if (p == NULL)
+        return '\0';
+    if (p[0] == '\0')
+        return '\0';
+
+    return p[0];
+}
+
+char *my_strrchr(const char *s, const void *c)
+{
+    char target = extract_char(c);
+    const char *last = NULL;
+
+    while (*s) {
+        if (*s == target)
+            last = s;
+        s++;
     }
+    if (target == '\0')
+        return (char *)s;
 
-    return NULL;
+    return (char *)last;
 }
