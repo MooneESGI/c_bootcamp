@@ -8,13 +8,9 @@ char *my_strrchr(const char *s, int c)
 
     if (!s)
         return NULL;
-
-    // Aller jusqu'à la fin
     i = 0;
     while (s[i] != '\0')
         i++;
-
-    // Recherche depuis la fin (inclut '\0')
     while (i >= 0)
     {
         if ((unsigned char)s[i] == target)

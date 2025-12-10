@@ -7,15 +7,10 @@ char *my_strstr(const char *haystack, const char *needle)
 
     if (!haystack || !needle)
         return NULL;
-
-    // Si needle est vide → retourner haystack
     if (needle[0] == '\0')
         return (char *)haystack;
-
-    // Parcours du haystack
     while (haystack[i] != '\0')
     {
-        // Si premier caractère correspond
         if (haystack[i] == needle[0])
         {
             j = 0;

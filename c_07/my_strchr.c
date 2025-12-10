@@ -9,8 +9,6 @@ char *my_strchr(const char *s, int c)
 
     if (!s)
         return NULL;
-
-    // On doit inclure le '\0' dans la recherche
     while (1)
     {
         if ((unsigned char)s[i] == target)
